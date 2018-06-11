@@ -29,7 +29,7 @@
     ws.onopen = function (){
         alert('连接已打开');
         //触发BE发图片
-        let buf = new ArrayBuffer(32);
+        let buf = new ArrayBuffer(111);
         let buf_ = new Uint8Array(buf);
         for (let i = 0; i<10; ++i) {
             buf_[i] = i*2 + 3;    
@@ -46,15 +46,15 @@
         let reader = new FileReader();
         reader.onload = function(evt) {
             if (evt.target.readyState == FileReader.DONE) {
-                let res = evt.target.result;
-                let buf = new Uint8Array(res);
-                for (let i=0; i<buf.byteLength; ++i) {
-                    console.log(buf[i]);
-                }
-                alert(`有消息过来: ${buf}`);
+                // let res = evt.target.result;
+                // let buf = new Uint8Array(res);
+                // for (let i=0; i<buf.byteLength; ++i) {
+                //     console.log(buf[i]);
+                // }
+                // alert(`有消息过来: ${buf}`);
 
-                return;
-
+                // return;
+                let data = evt.target.result;
                 socketClient.recvData(data, function(cmdID, cellID, opID, buffer, bufferOffset, dataLen, restDataLen, withHeader) {
                     if (withHeader) {
                         jpegStr = '';
