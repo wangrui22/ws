@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
-//const io = require('socket.io')(http, {transports:['polling'], httpCompression:false});
-//const io = require('socket.io')(http, {transports:['websocket', 'polling'], httpCompression:false});\
-const io = require('socket.io')(http, {transports:['websocket'], httpCompression:false});
-
-
 const fs = require('fs');
+
+//const io = require('socket.io')(http, {transports:['polling'], httpCompression:false});
+const io = require('socket.io')(http, {transports:['websocket', 'polling'], httpCompression:false});
+//const io = require('socket.io')(http, {transports:['websocket'], httpCompression:false});
+/*  */
 
 http.listen(1314);
 
