@@ -24,7 +24,7 @@
 
 
     //2.连接到服务器
-    let ws=new WebSocket('ws://localhost:1314/');
+    let ws=new WebSocket('ws://localhost:1024/');
 
     ws.onopen = function (){
         alert('连接已打开');

@@ -115,9 +115,10 @@ let server=net.createServer(socket => {
 
         console.log('握手完成');
 
-        const buf = Buffer.alloc(32);
-        socket.write(buf);
-        console.log(`send buffer ${buf.byteLength} to client.`);
+        //这里不能发送消息
+        // const buf = Buffer.alloc(32);
+        // socket.write(buf);
+        // console.log(`send buffer ${buf.byteLength} to client.`);
       }
 
       //console.log(headers);
@@ -234,7 +235,7 @@ let server=net.createServer(socket => {
 
         
 
-        const IMG_SIZE = 71;
+        const IMG_SIZE = 359;
         socket.no = 0;
         socket.fn = setInterval(function() {
             socket.no += 1;
@@ -276,4 +277,4 @@ let server=net.createServer(socket => {
     clearInterval(socket.fn);
   });
 });
-server.listen(1314);
+server.listen(1024);

@@ -22,7 +22,7 @@
     let pkgSize = 0;
     let bw = 0;
 
-    const socket = io.connect(`ws://127.0.0.1:1314`);
+    const socket = io.connect(`ws://localhost:1314`);
     
     socket.emit('init', {context:'hello'});
     
